@@ -42,19 +42,10 @@ checkClass.addEventListener('click', function () {
       losing();
     }
   }
-  // over the secretNumber
-  else if (guess > secretNumber) {
+  // over or under the secretNumber
+  else if (guess != secretNumber) {
     if (score > 1) {
-      msgClass.textContent = '📈 Too High';
-      decrementScore();
-    } else {
-      losing();
-    }
-  }
-  // under the secretNumber
-  else if (guess < secretNumber) {
-    if (score > 1) {
-      msgClass.textContent = '📉 Too Low';
+      guess > secretNumber ? msgClass.textContent = '📈 Too High' : msgClass.textContent = '📉 Too Low';
       decrementScore();
     } else {
       losing();
@@ -71,7 +62,7 @@ checkClass.addEventListener('click', function () {
     if (score > Number(highScore.textContent)) {
       highScore.textContent = score;
     }
-    
+
   }
 });
 
