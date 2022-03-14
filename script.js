@@ -6,6 +6,7 @@ const numberClass = document.querySelector('.number');
 const msgClass = document.querySelector('.message');
 const scoreClass = document.querySelector('.score');
 const checkClass = document.querySelector('.check');
+const highScore = document.querySelector('.highscore');
 const bodyStyling = document.querySelector('body').style;
 let score = 20;
 
@@ -66,6 +67,10 @@ checkClass.addEventListener('click', function () {
     numberClass.style.width = '30rem';
     bodyStyling.backgroundColor = '#60b347';
     checkClass.style.display = 'none';
+
+    if (score > Number(highScore.textContent)) {
+      highScore.textContent = score;
+    }
   }
 });
 
