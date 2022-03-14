@@ -60,7 +60,7 @@ checkClass.addEventListener('click', function () {
       losing();
     }
   }
-  // the right answer
+  // the right one
   else if (guess === secretNumber) {
     msgClass.textContent = '🎉 Correct Number!';
     numberClass.textContent = secretNumber;
