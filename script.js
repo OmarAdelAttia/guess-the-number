@@ -26,26 +26,18 @@ checkClass.addEventListener('click', function () {
   const guess = Number(guessClass.value);
   // No number entered
   if (!guess) {
-    if (score > 1) {
-      msgClass.textContent = '⛔ No Number';
-      decrementScore();
-    } else {
-      losing();
-    }
+    msgClass.textContent = '⛔ No Number';
   }
   // over 20 || under 0
   else if (guess > 20 || guess < 0) {
-    if (score > 1) {
-      msgClass.textContent = 'out of limit';
-      decrementScore();
-    } else {
-      losing();
-    }
+    msgClass.textContent = 'out of limit';
   }
   // over or under the secretNumber
   else if (guess != secretNumber) {
     if (score > 1) {
-      guess > secretNumber ? msgClass.textContent = '📈 Too High' : msgClass.textContent = '📉 Too Low';
+      guess > secretNumber
+        ? (msgClass.textContent = '📈 Too High')
+        : (msgClass.textContent = '📉 Too Low');
       decrementScore();
     } else {
       losing();
@@ -62,7 +54,6 @@ checkClass.addEventListener('click', function () {
     if (score > Number(highScore.textContent)) {
       highScore.textContent = score;
     }
-
   }
 });
 
