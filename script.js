@@ -71,6 +71,7 @@ checkClass.addEventListener('click', function () {
     if (score > Number(highScore.textContent)) {
       highScore.textContent = score;
     }
+    
   }
 });
 
