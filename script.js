@@ -72,7 +72,8 @@ checkClass.addEventListener('click', function () {
 // again btn
 document.querySelector('.again').addEventListener('click', function () {
   secretNumber = Math.trunc(Math.random() * 20) + 1;
-  scoreClass.textContent = '20';
+  score = 20;
+  scoreClass.textContent = score;
   msgClass.textContent = 'Start guessing...';
   bodyStyling.backgroundColor = '#222';
   numberClass.style.width = '15rem';
