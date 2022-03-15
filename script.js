@@ -24,17 +24,18 @@ function decrementScore() {
 // check btn
 checkClass.addEventListener('click', function () {
   const guess = Number(guessClass.value);
-  // No number entered
-  if (!guess) {
-    msgClass.textContent = '⛔ No Number';
-  }
-  // over 20 || under 0
-  else if (guess > 20 || guess < 0) {
-    msgClass.textContent = 'out of limit';
-  }
-  // over or under the secretNumber
-  else if (guess != secretNumber) {
-    if (score > 1) {
+  // the guess is wrong
+  if (guess != secretNumber) {
+    // No number entered
+    if (!guess) {
+      msgClass.textContent = '⛔ No Number';
+    }
+    // over 20 || under 0
+    else if (guess > 20 || guess < 0) {
+      msgClass.textContent = 'out of range';
+    }
+    // the guess is wrong but in the range 
+    else if (score > 1) {
       guess > secretNumber
         ? (msgClass.textContent = '📈 Too High')
         : (msgClass.textContent = '📉 Too Low');
@@ -43,7 +44,7 @@ checkClass.addEventListener('click', function () {
       losing();
     }
   }
-  // the right one
+  // the guess is right
   else if (guess === secretNumber) {
     msgClass.textContent = '🎉 Correct Number!';
     numberClass.textContent = secretNumber;
